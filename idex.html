@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Arabic Lessons | English & العربية</title>
+  <meta name="description" content="Bilingual Arabic instruction: Modern Standard Arabic, Quranic/Classical, Conversational Arabic. Lessons in English and Arabic." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-row">
+      <div>
+        <h1 class="brand">Arabic Lessons</h1>
+        <p class="tagline">From Alphabet to Fluency — Formal & Spoken</p>
+      </div>
+
+      <div class="lang-switch" role="group" aria-label="Language switch">
+        <button id="btn-en" class="btn btn-primary" type="button">English</button>
+        <button id="btn-ar" class="btn" type="button">العربية</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- ENGLISH -->
+    <section id="content-en" class="card">
+      <h2>What I Offer</h2>
+      <p class="lead">
+        You’re not just hiring “an Arabic tutor.” You’re working with a bilingual Arabic instructor who teaches
+        real Arabic—formal and spoken—through a clear, personalized plan.
+      </p>
+
+      <div class="grid">
+        <div>
+          <h3>Arabic Tracks</h3>
+          <ul>
+            <li><strong>Modern Standard Arabic (Fusha)</strong> — reading, writing, grammar</li>
+            <li><strong>Quranic / Classical Arabic</strong> — deeper text understanding</li>
+            <li><strong>Conversational Arabic</strong> — practical speaking & listening</li>
+            <li><strong>Arabic for travel, business, religion, and daily life</strong></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Who I Teach</h3>
+          <ul>
+            <li>English speakers: students, professionals, travelers</li>
+            <li>Muslims who want to understand Quran with more confidence</li>
+            <li>Heritage learners rebuilding fluency</li>
+            <li>Spanish speakers interested in Arabic (highly underserved market)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>How Lessons Work</h3>
+      <ol>
+        <li>Quick placement + goals (10–15 minutes)</li>
+        <li>Weekly lesson plan + practice material</li>
+        <li>Speaking drills + feedback + homework (optional)</li>
+      </ol>
+
+      <div class="cta">
+        <h3>Book a Lesson</h3>
+        <p>
+          Email me: <a href="mailto:youremail@example.com">youremail@example.com</a><br/>
+          WhatsApp: <a href="#">+1 (XXX) XXX-XXXX</a><br/>
+          (Optional) Scheduling link: <a href="#">Calendly</a>
+        </p>
+      </div>
+
+      <footer class="small">
+        <p>© <span id="year"></span> Arabic Lessons. All rights reserved.</p>
+      </footer>
+    </section>
+
+    <!-- ARABIC -->
+    <section id="content-ar" class="card hidden" lang="ar" dir="rtl">
+      <h2>ماذا أقدّم</h2>
+      <p class="lead">
+        أنت لا تبحث عن “مدرّس عربي” فقط — بل عن مُعلّم عربي ثنائي اللغة يساعدك على تعلّم العربية الفصحى والمحكية
+        بخطة واضحة ومخصصة لهدفك.
+      </p>
+
+      <div class="grid">
+        <div>
+          <h3>مسارات تعلّم العربية</h3>
+          <ul>
+            <li><strong>العربية الفصحى (Fusha)</strong> — قراءة وكتابة وقواعد</li>
+            <li><strong>العربية القرآنية / الكلاسيكية</strong> — فهم أعمق للنصوص</li>
+            <li><strong>العربية المحكية</strong> — محادثة واستماع بشكل عملي</li>
+            <li><strong>العربية للسفر والأعمال والدين والحياة اليومية</strong></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>من أُدرّس</h3>
+          <ul>
+            <li>الناطقون بالإنجليزية: طلاب، محترفون، مسافرون</li>
+            <li>من يرغب في فهم القرآن بثقة أكبر</li>
+            <li>أبناء الجاليات (Heritage Learners) لاستعادة الطلاقة</li>
+            <li>الناطقون بالإسبانية المهتمون بتعلّم العربية (سوق كبير وغير مخدوم)</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>كيف تكون الدروس</h3>
+      <ol>
+        <li>تقييم سريع + تحديد الهدف (10–15 دقيقة)</li>
+        <li>خطة أسبوعية + مواد تدريب</li>
+        <li>تدريبات محادثة + ملاحظات + واجب اختياري</li>
+      </ol>
+
+      <div class="cta">
+        <h3>احجز درسًا</h3>
+        <p>
+          البريد الإلكتروني: <a href="mailto:youremail@example.com">youremail@example.com</a><br/>
+          واتساب: <a href="#">+1 (XXX) XXX-XXXX</a><br/>
+          (اختياري) رابط الحجز: <a href="#">Calendly</a>
+        </p>
+      </div>
+
+      <footer class="small">
+        <p>© <span id="year-ar"></span> دروس العربية. جميع الحقوق محفوظة.</p>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    // year
+    const y = new Date().getFullYear();
+    document.getElementById('year').textContent = y;
+    document.getElementById('year-ar').textContent = y;
+
+    // language toggle
+    const btnEn = document.getElementById('btn-en');
+    const btnAr = document.getElementById('btn-ar');
+    const en = document.getElementById('content-en');
+    const ar = document.getElementById('content-ar');
+
+    function setLang(lang) {
+      if (lang === 'ar') {
+        en.classList.add('hidden');
+        ar.classList.remove('hidden');
+        btnAr.classList.add('btn-primary');
+        btnEn.classList.remove('btn-primary');
+        document.documentElement.lang = 'ar';
+        document.documentElement.dir = 'rtl';
+      } else {
+        ar.classList.add('hidden');
+        en.classList.remove('hidden');
+        btnEn.classList.add('btn-primary');
+        btnAr.classList.remove('btn-primary');
+        document.documentElement.lang = 'en';
+        document.documentElement.dir = 'ltr';
+      }
+      localStorage.setItem('siteLang', lang);
+    }
+
+    btnEn.addEventListener('click', () => setLang('en'));
+    btnAr.addEventListener('click', () => setLang('ar'));
+
+    // remember preference
+    const saved = localStorage.getItem('siteLang');
+    setLang(saved === 'ar' ? 'ar' : 'en');
+  </script>
+</body>
+</html>
