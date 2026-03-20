@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Arabic Tutor | English & العربية</title>
-  <meta name="description" content="Bilingual Arabic tutoring in English and Spanish. Modern Standard Arabic, Quranic/Classical Arabic, and conversational Arabic." />
+  <meta
+    name="description"
+    content="Bilingual Arabic tutoring in English and Spanish. Modern Standard Arabic, Quranic/Classical Arabic, and conversational Arabic."
+  />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -26,7 +29,7 @@
           <button id="btn-en" class="btn btn-primary" type="button">English</button>
           <button id="btn-ar" class="btn" type="button">العربية</button>
         </div>
-        <a class="btn btn-outline" href="#contact">Contact</a>
+        <a id="contact-link" class="btn btn-outline" href="#contact">Contact</a>
       </div>
     </div>
   </header>
@@ -128,10 +131,6 @@
             <p class="section-subtitle">Reach out and tell me your level + your goal. I’ll guide you from there.</p>
 
             <div class="contact-box">
-              <div class="contact-item">
-                <div class="label">Phone</div>
-              </div>
-
               <div class="contact-item">
                 <div class="label">Email</div>
                 <a class="value" href="mailto:tutor.fares@gmail.com">tutor.fares@gmail.com</a>
@@ -238,10 +237,6 @@
 
             <div class="contact-box">
               <div class="contact-item">
-                <div class="label">الهاتف</div>
-              </div>
-
-              <div class="contact-item">
                 <div class="label">البريد</div>
                 <a class="value" href="mailto:tutor.fares@gmail.com">tutor.fares@gmail.com</a>
               </div>
@@ -278,16 +273,15 @@
   </main>
 
   <script>
-    // Footer years
     const y = new Date().getFullYear();
     document.getElementById('year-en').textContent = y;
     document.getElementById('year-ar').textContent = y;
 
-    // Language toggle
     const btnEn = document.getElementById('btn-en');
     const btnAr = document.getElementById('btn-ar');
     const en = document.getElementById('content-en');
     const ar = document.getElementById('content-ar');
+    const contactLink = document.getElementById('contact-link');
 
     function setLang(lang) {
       if (lang === 'ar') {
@@ -297,6 +291,8 @@
         btnEn.classList.remove('btn-primary');
         document.documentElement.lang = 'ar';
         document.documentElement.dir = 'rtl';
+        contactLink.href = '#contact-ar';
+        contactLink.textContent = 'تواصل';
       } else {
         ar.classList.add('hidden');
         en.classList.remove('hidden');
@@ -304,7 +300,10 @@
         btnAr.classList.remove('btn-primary');
         document.documentElement.lang = 'en';
         document.documentElement.dir = 'ltr';
+        contactLink.href = '#contact';
+        contactLink.textContent = 'Contact';
       }
+
       localStorage.setItem('siteLang', lang);
     }
 
